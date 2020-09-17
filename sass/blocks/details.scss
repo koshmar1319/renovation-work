@@ -89,7 +89,7 @@
     }
     &:nth-child(2){
       left: 460px;
-      top: 206px;
+      top: 236px;
     }
     &:nth-child(3){
       left: 730px;
@@ -146,6 +146,7 @@
        }
        span{
          opacity: 1;
+         z-index: 1;
        }
     }
   }
