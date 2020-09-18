@@ -2,12 +2,18 @@ $(document).ready(function() {
 	$('.fullpage').fullpage({
 		scrollOverflow: true,
 		scrollOverflowOptions: {click: false},
+		menu: '.menu',
+		anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'fifthPage', 'lastPage'],
 		afterRender: function(){
 			$('.projects__last').html($('.projects__slides').length);
 		},
 		afterSlideLoad: function(section, origin, destination){
 			$('.projects__first').html(++destination.index);
 		}
+	});
+
+	$(document).on('click', '.scroll-down', function(){
+		fullpage_api.moveSectionDown();
 	});
 
 	$(document).on('click', '.projects__mini a', changeImg);
