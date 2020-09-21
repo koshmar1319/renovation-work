@@ -16,6 +16,8 @@ $(document).ready(function() {
 		fullpage_api.moveSectionDown();
 	});
 
+	$(document).on('click', '.fixed__hamburger', openMenu);
+	$(document).on('click', '.main-menu__close', closeMenu);
 	$(document).on('click', '.projects__mini a', changeImg);
 	$(document).on('input', '.calc', changeInput);
 
@@ -27,6 +29,14 @@ $(document).ready(function() {
 	function changeInput(event){
 		event.preventDefault();
 		$(this).find('.calc__range output').val($(this).find('.calc__range input').val());
+	}
+
+	function openMenu(event){
+		$('.main-menu').addClass('main-menu--active');
+	}
+
+	function closeMenu(event){
+		$('.main-menu').removeClass('main-menu--active');
 	}
 
 });
